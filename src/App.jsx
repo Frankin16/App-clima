@@ -2,9 +2,9 @@ import './App.css'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-const ApiEndpoint = "https://api.openweathermap.org/data/2.5/weather?"
-const ApiKey = "bb12cf61ee6723c202343dfefde65708"
-const Units = "&units=metric"
+const apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?"
+const apiKey = "bb12cf61ee6723c202343dfefde65708"
+const units = "&units=metric"
 
 
 
@@ -24,7 +24,7 @@ function App() {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     })
-    let finalApiEndpoint = `${ApiEndpoint}lat=${latitude}&lon=${longitude}&appid=${ApiKey}${Units}`;
+    let finalApiEndpoint = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}${units}`;
     axios
     
       .get(finalApiEndpoint)
