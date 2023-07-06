@@ -46,7 +46,7 @@ function App() {
     </section>
       <div className='container'>
         <div className='column1'>
-          <h2 className='temp'>{Math.round(isMeter ? respData.main?.temp : respData.main?.temp * 1.8 + 32)}°</h2>
+          <h2 className='temp'>{Math.round(isMeter ? respData.main?.temp : respData.main?.temp * 1.8 + 32)}{isMeter ? "°C" : "°F"} </h2>
           <h3>Wind:{respData.wind?.speed}</h3>
           <h3>Pressure:{respData.main?.pressure}</h3>
           <h3>Humidity:{respData.main?.humidity}</h3>
@@ -61,7 +61,7 @@ function App() {
         
       </div>
       <section className='button'>
-        <button onClick={changeUnits} className='change'>Change to Fahrenheit</button>
+        <button onClick={changeUnits} className='change'>Change temperature units</button>
       </section>
     </>
   )
